@@ -14,11 +14,11 @@ export const navItems: INavData[] = [
     title: true,
     name: 'Administración'
   },
-  {
-    name: 'Usuarios',
-    url: '/usuarios',
-    icon: 'icon-people'
-  },
+  /*   {
+      name: 'Usuarios',
+      url: '/usuarios',
+      icon: 'icon-people'
+    }, */
   {
     name: 'Categorías',
     url: '/categorias',
@@ -40,21 +40,21 @@ export const navItems: INavData[] = [
     name: 'Afiliados'
   },
   {
+    name: 'Afiliados activos',
+    url: '/afiliados',
+    icon: 'icon-puzzle',
+  },
+  {
     name: 'Peticiones',
-    url: '/base',
+    url: '/afiliados/peticiones',
     icon: 'icon-puzzle',
   },
-  {
-    name: 'Lista de afiliados',
-    url: '/base',
-    icon: 'icon-puzzle',
-  },
-  {
-    name: 'Promocionar',
-    url: '/base',
-    icon: 'icon-puzzle',
 
-  },
+  /*   {
+      name: 'Promoción de afiliados',
+      url: '/base',
+      icon: 'icon-puzzle',
+    }, */
   /*
   {
     name: 'Buttons',

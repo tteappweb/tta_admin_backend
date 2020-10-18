@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Anuncios</h4>
+        <div class="w-100 text-right">
+            <a class="btn btn-primary" [routerLink]="['/anuncios/create']">Crear anuncio</a>
+        </div>
+        <br>
+        <table class="table">
+            <thead>
+                <th>Anuncio</th>
+               
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let anuncio of anuncios" >
+                    <td>
+                        <img [src]="anuncio.imagen" alt="" width="250px" srcset="">    
+                    </td>
+                    <td>
+                        <button (click)="eliminar(anuncio)" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

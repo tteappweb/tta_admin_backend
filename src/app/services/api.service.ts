@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Anuncio } from '../models/anuncio.model';
 import { Blog } from '../models/blog.model';
 import { Categoria } from '../models/category.model';
 
@@ -19,7 +20,7 @@ export class ApiService {
 
   }
 
-  async create(collection: string, data: Categoria | Blog) {
+  async create(collection: string, data: Categoria | Blog | Anuncio) {
     console.log("Crear la categoria", data);
     try {
       await this.api.collection(collection).add(data);

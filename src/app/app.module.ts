@@ -52,6 +52,10 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/reducers';
 import { BlogFormComponent } from './components/blogs/blog-form/blog-form.component';
+import { AnunciosComponent } from './components/anuncios/anuncios.component';
+import { AnunciosFormComponent } from './components/anuncios/anuncios-form/anuncios-form.component';
+import { AfiliadosComponent } from './components/afiliados/afiliados.component';
+import { PeticionesComponent } from './components/afiliados/peticiones/peticiones.component';
 
 
 
@@ -86,7 +90,11 @@ import { BlogFormComponent } from './components/blogs/blog-form/blog-form.compon
     CategoriasComponent,
     AddCategoriaComponent,
     BlogsComponent,
-    BlogFormComponent
+    BlogFormComponent,
+    AnunciosComponent,
+    AnunciosFormComponent,
+    AfiliadosComponent,
+    PeticionesComponent
   ],
   providers: [{
     provide: LocationStrategy,

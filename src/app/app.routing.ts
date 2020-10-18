@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AfiliadosComponent } from './components/afiliados/afiliados.component';
+import { PeticionesComponent } from './components/afiliados/peticiones/peticiones.component';
+import { AnunciosFormComponent } from './components/anuncios/anuncios-form/anuncios-form.component';
+import { AnunciosComponent } from './components/anuncios/anuncios.component';
 import { BlogFormComponent } from './components/blogs/blog-form/blog-form.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { AddCategoriaComponent } from './components/categorias/add-categoria/add-categoria.component';
@@ -73,6 +77,22 @@ export const routes: Routes = [
       {
         path: 'blogs/create',
         component: BlogFormComponent
+      },
+      {
+        path: 'anuncios',
+        component: AnunciosComponent
+      },
+      {
+        path: 'anuncios/create',
+        component: AnunciosFormComponent
+      },
+      {
+        path: 'afiliados',
+        component: AfiliadosComponent
+      },
+      {
+        path: 'afiliados/peticiones',
+        component: PeticionesComponent
       },
       {
         path: 'base',
