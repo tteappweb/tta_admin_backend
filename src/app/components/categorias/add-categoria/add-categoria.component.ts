@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Categoria } from '../../../categoria.model';
 import { ApiService } from '../../../services/api.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Categoria } from '../../../models/category.model';
+import { AppState } from '../../../app.state';
 
 
 
@@ -13,28 +15,20 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddCategoriaComponent implements OnInit {
 
-  categoria: Categoria = {
-    nombre: '',
-    imagen: ''
+  categoria: Categoria;
+  constructor(private api: ApiService, private router: Router, private store: Store) {
+
   }
-  constructor(private api: ApiService, private router: Router) { }
 
   loading: boolean = false;
   collection = 'categorias';
 
-  public archivoForm = new FormGroup({
-    archivo: new FormControl(null, Validators.required),
-  });
 
-  public mensajeArchivo = 'No hay un archivo seleccionado';
-  public datosFormulario = new FormData();
-  public nombreArchivo = 'prueba';
-  public URLPublica = '';
-  public porcentaje = 0;
-  public finalizado = false;
+
   public file: File = null;
 
   ngOnInit(): void {
+
   }
 
   async handleCreate() {
@@ -42,7 +36,7 @@ export class AddCategoriaComponent implements OnInit {
       alert("Selecciona una imagen para la categoría");
       return;
     }
-    if (!this.categoria.nombre) {
+    if (!this.categoria) {
       alert("Ingresa un nombre para la categoría");
     }
     await this.subirArchivo();
@@ -64,8 +58,6 @@ export class AddCategoriaComponent implements OnInit {
   public cambioArchivo(event) {
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
-    } else {
-      this.mensajeArchivo = 'No hay un archivo seleccionado';
     }
   }
 

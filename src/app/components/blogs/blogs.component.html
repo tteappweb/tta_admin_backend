@@ -1,1 +1,37 @@
-<p>blogs works!</p>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Blogs</h4>
+        <div class="w-100 text-right">
+            <a class="btn btn-primary" [routerLink]="['/blogs/create']">Crear blog</a>
+        </div>
+        <br>
+        <table class="table">
+            <thead>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let blog of blogs" >
+                    <td><b>{{ blog.titulo }}</b></td>
+                    <td>
+                        {{ blog.descripcion }}
+                    </td>
+                    <td>
+                        {{ blog.fecha }}
+                    </td>
+                    <td>
+                        <button (click)="eliminar(blog)" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        <a [href]="blog.link" target="_blank" class="btn btn-success">
+                            <i class="fa fa-eye"></i>
+                        </a>
+            
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

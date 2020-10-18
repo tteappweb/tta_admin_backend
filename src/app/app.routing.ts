@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BlogFormComponent } from './components/blogs/blog-form/blog-form.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
 import { AddCategoriaComponent } from './components/categorias/add-categoria/add-categoria.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 
@@ -57,8 +59,20 @@ export const routes: Routes = [
         component: CategoriasComponent
       },
       {
-        path: 'categorias/add',
+        path: 'categorias/create',
         component: AddCategoriaComponent
+      },
+      {
+        path: 'categorias/edit',
+        component: AddCategoriaComponent
+      },
+      {
+        path: 'blogs',
+        component: BlogsComponent
+      },
+      {
+        path: 'blogs/create',
+        component: BlogFormComponent
       },
       {
         path: 'base',

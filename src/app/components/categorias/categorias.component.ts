@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Categoria } from '../../categoria.model';
+
 import { ApiService } from '../../services/api.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Categoria } from '../../models/category.model';
+import { Observable } from 'rxjs';
+import * as Actions from './../../store/actions';
 
 @Component({
   selector: 'app-categorias',
@@ -13,7 +16,8 @@ export class CategoriasComponent implements OnInit {
 
   categorias: Categoria[];
   collection: string = "categorias";
-  constructor(private api: ApiService) { }
+  categoria: Observable<Categoria>;
+  constructor(private api: ApiService, private store: Store) { }
 
   ngOnInit(): void {
     this.fetchData();
@@ -38,6 +42,10 @@ export class CategoriasComponent implements OnInit {
   async eliminarCategoria(categoria: Categoria) {
     await this.api.delete(this.collection, categoria.id);
     this.fetchData();
+  }
+
+  editCategory(category: Categoria) {
+    this.store.dispatch(new Actions.SetCategory(category));
   }
 
 

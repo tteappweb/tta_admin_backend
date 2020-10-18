@@ -25,8 +25,8 @@ export const navItems: INavData[] = [
     icon: 'icon-layers'
   },
   {
-    name: 'Avisos',
-    url: '/avisos',
+    name: 'Blogs',
+    url: '/blogs',
     icon: 'icon-note'
   },
   {

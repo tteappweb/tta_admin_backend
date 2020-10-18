@@ -47,8 +47,11 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { AddCategoriaComponent } from './components/categorias/add-categoria/add-categoria.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/reducers';
+import { BlogFormComponent } from './components/blogs/blog-form/blog-form.component';
 
 
 
@@ -70,7 +73,8 @@ import { BlogsComponent } from './components/blogs/blogs.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFireAuthModule,
-    NgbModule
+    NgbModule,
+    StoreModule.forRoot({ categoria: reducer }),
   ],
   declarations: [
     AppComponent,
@@ -81,7 +85,8 @@ import { BlogsComponent } from './components/blogs/blogs.component';
     RegisterComponent,
     CategoriasComponent,
     AddCategoriaComponent,
-    BlogsComponent
+    BlogsComponent,
+    BlogFormComponent
   ],
   providers: [{
     provide: LocationStrategy,
