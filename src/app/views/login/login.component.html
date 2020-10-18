@@ -11,7 +11,7 @@
                   <br>
                   <br>
                 </div>
-                <form>
+                <form novalidate (ngSubmit)="handleLogin()">
                   <h1 class="text-center">Inicio de Sesión</h1>
                   <p class="text-muted text-center">Administración App Tu Taller Mecánico</p>
                   <div class="input-group mb-3">
@@ -28,7 +28,7 @@
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <button [disabled] = "isLoading"  type="button" class="btn btn-primary px-4" (click)="handleLogin()"  >
+                      <button [disabled] = "isLoading"  type="submit" class="btn btn-primary px-4"   >
                         {{ 
                           isLoading? 'Iniciando sesion':"Iniciar sesión"
                          }}

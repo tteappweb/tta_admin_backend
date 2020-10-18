@@ -46,6 +46,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CategoriasComponent } from './components/categorias/categorias.component';
+import { AddCategoriaComponent } from './components/categorias/add-categoria/add-categoria.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BlogsComponent } from './components/blogs/blogs.component';
 
 
 
@@ -67,7 +70,7 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFireAuthModule,
-
+    NgbModule
   ],
   declarations: [
     AppComponent,
@@ -76,7 +79,9 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
     P500Component,
     LoginComponent,
     RegisterComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    AddCategoriaComponent,
+    BlogsComponent
   ],
   providers: [{
     provide: LocationStrategy,

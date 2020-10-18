@@ -1,1 +1,36 @@
-<p>categorias works!</p>
+<div class="card">
+
+   
+
+    <div class="card-body">
+        <div class="w-100 text-right">
+            <a class="btn btn-primary" [routerLink]="['/categorias/add']">Crear categoría</a>
+        </div>
+        <br>
+        <table class="table">
+            <thead>
+                <th>Nombre de la categoría</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let categoria of categorias" >
+                    <td>{{ categoria.nombre }}</td>
+                    <td>
+                        <img [src]="categoria.imagen" width="100" [alt]="'imagen de '+categoria.nombre" >
+                    </td>
+                    <td>
+                        <button (click)="eliminarCategoria(categoria)" class="btn btn-warning text-white">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                        <button (click)="eliminarCategoria(categoria)" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                       
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

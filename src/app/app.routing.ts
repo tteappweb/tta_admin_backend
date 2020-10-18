@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddCategoriaComponent } from './components/categorias/add-categoria/add-categoria.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 
 // Import Containers
@@ -54,6 +55,10 @@ export const routes: Routes = [
       {
         path: 'categorias',
         component: CategoriasComponent
+      },
+      {
+        path: 'categorias/add',
+        component: AddCategoriaComponent
       },
       {
         path: 'base',
