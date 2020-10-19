@@ -1,1 +1,41 @@
-<p>peticiones works!</p>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Peticiones de afiliación</h4>
+        <br>
+        <table class="table">
+            <thead>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Ubicación</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let afiliado of afiliados" >
+                    <td>
+                        <b>{{ afiliado.nombre }}</b>
+                        <br>
+                        <img [src]="afiliado.img" width="100" [alt]="'imagen de '+afiliado.nombre" >
+                    </td>
+                    <td>
+                       {{ afiliado.categoria }}
+                    </td>
+                    <td>
+                        {{ afiliado.ubicacion }}
+                     </td>
+                  
+                    
+                    <td>
+                        <a  [routerLink]="['/afiliados/'+afiliado.id+'/details']"  class="btn btn-success text-white">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        
+                        <button  class="btn btn-success text-white" (click)="desactivar(afiliado)" >
+                            Activar
+                        </button>      
+                                  
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

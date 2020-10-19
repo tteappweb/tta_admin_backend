@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AfiliadosComponent } from './components/afiliados/afiliados.component';
+import { DetailsComponent } from './components/afiliados/details/details.component';
 import { PeticionesComponent } from './components/afiliados/peticiones/peticiones.component';
 import { AnunciosFormComponent } from './components/anuncios/anuncios-form/anuncios-form.component';
 import { AnunciosComponent } from './components/anuncios/anuncios.component';
@@ -93,6 +94,10 @@ export const routes: Routes = [
       {
         path: 'afiliados/peticiones',
         component: PeticionesComponent
+      },
+      {
+        path: 'afiliados/:id/details',
+        component: DetailsComponent
       },
       {
         path: 'base',

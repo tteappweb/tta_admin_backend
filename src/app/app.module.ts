@@ -47,7 +47,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { AddCategoriaComponent } from './components/categorias/add-categoria/add-categoria.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/reducers';
@@ -56,6 +56,7 @@ import { AnunciosComponent } from './components/anuncios/anuncios.component';
 import { AnunciosFormComponent } from './components/anuncios/anuncios-form/anuncios-form.component';
 import { AfiliadosComponent } from './components/afiliados/afiliados.component';
 import { PeticionesComponent } from './components/afiliados/peticiones/peticiones.component';
+import { DetailsComponent } from './components/afiliados/details/details.component';
 
 
 
@@ -77,8 +78,8 @@ import { PeticionesComponent } from './components/afiliados/peticiones/peticione
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFireAuthModule,
-    NgbModule,
     StoreModule.forRoot({ categoria: reducer }),
+    NgbModule
   ],
   declarations: [
     AppComponent,
@@ -94,7 +95,8 @@ import { PeticionesComponent } from './components/afiliados/peticiones/peticione
     AnunciosComponent,
     AnunciosFormComponent,
     AfiliadosComponent,
-    PeticionesComponent
+    PeticionesComponent,
+    DetailsComponent
   ],
   providers: [{
     provide: LocationStrategy,

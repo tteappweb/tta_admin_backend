@@ -19,11 +19,7 @@ export const navItems: INavData[] = [
       url: '/usuarios',
       icon: 'icon-people'
     }, */
-  {
-    name: 'Categorías',
-    url: '/categorias',
-    icon: 'icon-layers'
-  },
+
   {
     name: 'Blogs',
     url: '/blogs',
@@ -49,6 +45,12 @@ export const navItems: INavData[] = [
     url: '/afiliados/peticiones',
     icon: 'icon-puzzle',
   },
+  {
+    name: 'Categorías',
+    url: '/categorias',
+    icon: 'icon-layers'
+  },
+
 
   /*   {
       name: 'Promoción de afiliados',

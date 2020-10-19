@@ -1,0 +1,100 @@
+<div class="card" style="min-height: 80vh;">
+    <div class="card-body">
+        <div *ngIf="isLoading">
+            Cargando información ...
+        </div>
+        <div *ngIf="!isLoading">
+            <div *ngIf="!afiliado" class="alert alert-danger" role="alert">
+                <h4 class="alert-heading"></h4>
+                <p></p>
+                <p class="mb-0"></p>
+            </div>
+            <div *ngIf="afiliado">
+                <div class="row">
+                    <div class="col-3">
+                        <img [src]="afiliado.img" width="90%" alt="">
+                        <br>
+                        <div class="title mt-2">Nombre</div>
+                        <div class="value">
+                            <b>
+                                <h3>{{ afiliado.nombre }}</h3>
+                            </b>
+                        </div>
+                        <hr>
+                        <div class="title">Status</div>
+                        <div class="value">
+                            <div class="container">
+                                <div *ngIf="afiliado.aprobado" class="row">
+                                    <div class="aprobado"></div>
+                                    <div>Aprobado</div>
+                                </div>
+                                <div *ngIf="!afiliado.aprobado" class="row">
+                                    <div class="no-aprobado"></div>
+                                    <div>En espera de aprobación</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button *ngIf="!afiliado.aprobado" class="btn btn-lg btn-outline-success"
+                                (click)="switchAprobar()">
+                                <i class="fa fa-thumbs-up"></i> Aprobar
+                            </button>
+                            <button *ngIf="afiliado.aprobado" class="btn btn-lg btn-outline-danger"
+                                (click)="switchAprobar()">
+                                <i class="fa fa-thumbs-down"></i> Remover aprobación
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-9">
+
+                        <div class="row">
+                            <div class="col-6">
+
+                                <div class="title">Categoría</div>
+                                <div class="value">
+                                    {{ afiliado.categoria }}
+                                </div>
+                                <hr>
+                                <div class="title">Ubicación</div>
+                                <div class="value">
+                                    {{ afiliado.ubicacion }}
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="col-6">
+
+                                <div class="title">Teléfono</div>
+                                <div class="value">
+                                    {{ afiliado.telefono }}
+                                </div>
+                                <hr>
+                                <div class="title">RFC</div>
+                                <div class="value">
+                                    {{ afiliado.rfc }}
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="title">Fotos</div>
+                            <br> <br>
+                        </div>
+                        <div class="row" style="width: 70%;">
+                            <ngb-carousel>
+                                <ng-template ngbSlide *ngFor="let foto of afiliado.fotos">
+                                    <div class="picsum-img-wrapper">
+                                        <img width="100%" [src]="foto">
+                                    </div>
+                                </ng-template>
+                            </ngb-carousel>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
