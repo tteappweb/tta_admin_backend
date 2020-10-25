@@ -17,6 +17,8 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { SlidesBienvenidaComponent } from './components/slides-bienvenida/slides-bienvenida.component';
+import { AddSlideComponent } from './components/slides-bienvenida/add-slide/add-slide.component';
 
 export const routes: Routes = [
   {
@@ -70,6 +72,18 @@ export const routes: Routes = [
       {
         path: 'categorias/edit',
         component: AddCategoriaComponent
+      },
+      {
+        path: 'slides',
+        component: SlidesBienvenidaComponent
+      },
+      {
+        path: 'slides/create',
+        component: AddSlideComponent
+      },
+      {
+        path: 'slides/edit',
+        component: AddSlideComponent
       },
       {
         path: 'blogs',

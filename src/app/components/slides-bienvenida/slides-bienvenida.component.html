@@ -3,28 +3,28 @@
    
 
     <div class="card-body">
-        <h4 class="card-title">Categorías</h4>
+        <h4 class="card-title">Slides Bienvenida</h4>
         <div class="w-100 text-right">
-            <a class="btn btn-primary" [routerLink]="['/categorias/create']">Crear categoría</a>
+            <a class="btn btn-primary" [routerLink]="['/slides/create']">Crear slide</a>
         </div>
         <br>
         <table class="table">
             <thead>
-                <th>Nombre de la categoría</th>
+                <th>Númer de slide</th>
                 <th>Imagen</th>
                 <th>Acciones</th>
             </thead>
             <tbody>
-                <tr *ngFor="let categoria of categorias" >
-                    <td>{{ categoria.nombre }}</td>
+                <tr *ngFor="let slide of slides" >
+                    <td>{{ slide.numeroSlide}}</td>
                     <td>
-                        <img [src]="categoria.imagen" width="100" [alt]="'imagen de '+categoria.nombre" >
+                        <img [src]="slide.imagen" width="100" >
                     </td>
                     <td>
-                        <button (click)="editCategory(categoria)" class="btn btn-warning text-white">
+                        <button (click)="editSlide(slide)" class="btn btn-warning text-white">
                             <i class="fa fa-edit"></i>
                         </button>
-                        <button (click)="eliminarCategoria(categoria)" class="btn btn-danger">
+                        <button (click)="eliminarSlide(slide)" class="btn btn-danger">
                             <i class="fa fa-trash"></i>
                         </button>
                        

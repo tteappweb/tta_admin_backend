@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Crear Slide</h4>
+        <form novalidate (ngSubmit)="handleCreate()">
+
+            <div class="form-group">
+                <label for="numero">Número de slide</label>
+                <input type="number" class="form-control" [(ngModel)]="slide.numeroSlide" name="numero" placeholder="Ingresa el número del slide para su ordenamiento">
+            </div>
+        
+            <div class="form-group">
+                <input class="file-input" type="file" (change)="cambioArchivo($event)">
+            </div>
+            <button type="submit" class="btn btn-primary">Crear slide</button>
+
+        </form>
+    </div>
+</div>

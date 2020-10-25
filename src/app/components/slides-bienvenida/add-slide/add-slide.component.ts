@@ -5,26 +5,24 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Categoria } from '../../../models/category.model';
 import { AppState } from '../../../app.state';
-
-
-
+import { Slide } from '../../../models/slide-bienvenida.model';
 @Component({
-  selector: 'app-add-categoria',
-  templateUrl: './add-categoria.component.html',
-  styleUrls: ['./add-categoria.component.css']
+  selector: 'app-add-slide',
+  templateUrl: './add-slide.component.html',
+  styleUrls: ['./add-slide.component.css']
 })
-export class AddCategoriaComponent implements OnInit {
+export class AddSlideComponent implements OnInit {
 
-  categoria: Categoria = {
+  slide: Slide = {
     imagen: null,
-    nombre: null
+    numeroSlide: null
   };
   constructor(private api: ApiService, private router: Router, private store: Store) {
 
   }
 
   loading: boolean = false;
-  collection = 'categorias';
+  collection = 'slides';
 
 
 
@@ -36,23 +34,23 @@ export class AddCategoriaComponent implements OnInit {
 
   async handleCreate() {
     if (!this.file) {
-      alert("Selecciona una imagen para la categoría");
+      alert("Selecciona una imagen para el slide");
       return;
     }
-    if (!this.categoria.nombre) {
-      alert("Ingresa un nombre para la categoría");
+    if (!this.slide) {
+      alert("Ingresa el numero de slide");
     }
     await this.subirArchivo();
-    this.createCategoria();
+    this.createSlide();
   }
 
-  async createCategoria() {
+  async createSlide() {
     this.loading = true;
-    const resp = await this.api.create(this.collection, this.categoria);
+    const resp = await this.api.create(this.collection, this.slide);
     if (resp) {
-      this.router.navigate(['/categorias']);
+      this.router.navigate(['/slides']);
     } else {
-      console.log("error creating categoria");
+      console.log("error creating slide");
     }
     this.loading = false;
   }
@@ -70,9 +68,8 @@ export class AddCategoriaComponent implements OnInit {
     const fileName = new Date().toISOString();
     let referencia = this.api.fileRef(fileName);
     let tarea = await this.api.uploadFile(fileName, this.file);
-    this.categoria.imagen = await referencia.getDownloadURL().toPromise();
+    this.slide.imagen = await referencia.getDownloadURL().toPromise();
   }
-
 
 
 }

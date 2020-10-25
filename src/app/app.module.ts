@@ -57,6 +57,9 @@ import { AnunciosFormComponent } from './components/anuncios/anuncios-form/anunc
 import { AfiliadosComponent } from './components/afiliados/afiliados.component';
 import { PeticionesComponent } from './components/afiliados/peticiones/peticiones.component';
 import { DetailsComponent } from './components/afiliados/details/details.component';
+import { SlidesBienvenidaComponent } from './components/slides-bienvenida/slides-bienvenida.component';
+import { AddSlideComponent } from './components/slides-bienvenida/add-slide/add-slide.component';
+
 
 
 
@@ -96,7 +99,9 @@ import { DetailsComponent } from './components/afiliados/details/details.compone
     AnunciosFormComponent,
     AfiliadosComponent,
     PeticionesComponent,
-    DetailsComponent
+    DetailsComponent,
+    SlidesBienvenidaComponent,
+    AddSlideComponent
   ],
   providers: [{
     provide: LocationStrategy,

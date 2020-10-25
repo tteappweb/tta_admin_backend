@@ -50,6 +50,11 @@ export const navItems: INavData[] = [
     url: '/categorias',
     icon: 'icon-layers'
   },
+  {
+    name: 'Slides Bienvenida',
+    url: '/slides',
+    icon: 'icon-layers'
+  }
 
 
   /*   {
