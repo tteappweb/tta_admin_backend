@@ -19,7 +19,8 @@ export class AnunciosFormComponent implements OnInit {
   collection = 'anuncios';
 
   anuncio: Anuncio = {
-    imagen: ''
+    imagen: '',
+    link: ''
   }
 
 

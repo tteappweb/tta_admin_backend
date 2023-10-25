@@ -29,7 +29,7 @@ export class BlogFormComponent implements OnInit {
 
   async handleCreate() {
     console.log(this.blog);
-    return;
+    //return;
     this.loading = true;
     const resp = await this.api.create('blogs', this.blog);
     if (resp) {

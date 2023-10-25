@@ -15,7 +15,9 @@ export class AddSlideComponent implements OnInit {
 
   slide: Slide = {
     imagen: null,
-    numeroSlide: null
+    numeroSlide: null,
+    titulo:null,
+    descripcion:null
   };
   constructor(private api: ApiService, private router: Router, private store: Store) {
 
@@ -37,10 +39,10 @@ export class AddSlideComponent implements OnInit {
       alert("Selecciona una imagen para el slide");
       return;
     }
-    if (!this.slide) {
-      alert("Ingresa el numero de slide");
+    if (!this.slide.descripcion||!this.slide.titulo||!this.slide.numeroSlide) {
+      alert("Todos los Campos son obligatorios");
     }
-    await this.subirArchivo();
+   await this.subirArchivo();
     this.createSlide();
   }
 

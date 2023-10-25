@@ -31,6 +31,8 @@ export class SlidesBienvenidaComponent implements OnInit {
       resp.forEach((doc) => {
         this.slides.push({
           id: doc.id,
+          titulo: doc.data()['titulo'],
+          descripcion: doc.data()['descripcion'],
           numeroSlide: doc.data()['numeroSlide'],
           imagen: doc.data()['imagen'],
         } as Slide);

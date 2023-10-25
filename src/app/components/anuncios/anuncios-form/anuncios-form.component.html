@@ -8,6 +8,10 @@
             <div class="form-group">
                 <input class="file-input" type="file" (change)="cambioArchivo($event)" >
             </div>
+            <div class="form-group">
+                <label for="name">Link al anuncio</label>
+                <input type="text" class="form-control" [(ngModel)]="anuncio.link" name="link" placeholder="">
+            </div>
             <button type="submit" class="btn btn-primary">Crear anuncio</button>
         </form>
     </div>

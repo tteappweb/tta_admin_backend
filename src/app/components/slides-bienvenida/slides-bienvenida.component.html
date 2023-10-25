@@ -12,11 +12,15 @@
             <thead>
                 <th>Númer de slide</th>
                 <th>Imagen</th>
+                <th>Titulo</th>
+                <th>Descripcion</th>
                 <th>Acciones</th>
             </thead>
             <tbody>
                 <tr *ngFor="let slide of slides" >
                     <td>{{ slide.numeroSlide}}</td>
+                    <td>{{ slide.titulo}}</td>
+                    <td>{{ slide.descripcion}}</td>
                     <td>
                         <img [src]="slide.imagen" width="100" >
                     </td>
